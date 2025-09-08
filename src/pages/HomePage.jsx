@@ -1,10 +1,13 @@
 import HeadBar from "../components/HeadBar";
 import Header from "../components/Header";
 
+
 const HomePage = () => {
   return (
-    <HeadBar>
-    </HeadBar>
+    <>
+    <HeadBar></HeadBar>
+    <Header></Header>
+    </>
   );
 };
 
