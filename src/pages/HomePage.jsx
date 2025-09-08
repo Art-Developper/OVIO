@@ -1,4 +1,4 @@
-import HeadBar from "../components/headBar";
+import HeadBar from "../components/HeadBar";
 
 const Header = () => {
   return (

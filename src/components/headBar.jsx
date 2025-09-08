@@ -1,6 +1,6 @@
 import React from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import "headBar.css";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";git
+import "./HeadBar.css";
 
 const TopBar = () => {
   return (
