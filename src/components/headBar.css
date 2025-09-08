@@ -3,18 +3,23 @@
   border-bottom: 1px solid #ddd;
   padding: 8px 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   font-size: 14px;
   color: #555;
   flex-wrap: wrap; 
+  position: fixed;   
+  top: 0;            
+  left: 0;
+  width: 100%;       
+  z-index: 1000;
 }
 
 .top-left,
 .top-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
 }
 
@@ -22,6 +27,10 @@
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+.top-right span:hover{
+  color: #53079d;
 }
 
 .icon {
@@ -44,7 +53,7 @@
 .lang {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 15px;
   cursor: pointer;
   transition: opacity 0.2s;
 }
