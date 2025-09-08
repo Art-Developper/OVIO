@@ -1,10 +1,11 @@
 import HeadBar from "../components/HeadBar";
+import Header from "../components/Header";
 
-const Header = () => {
+const HomePage = () => {
   return (
     <HeadBar>
     </HeadBar>
   );
 };
 
-export default Header;
+export default HomePage;
