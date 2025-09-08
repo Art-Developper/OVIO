@@ -1,3 +1,4 @@
+// Header.jsx
 import { useState } from "react";
 import OVIOLogo from "../assets/OVIOLogo.png";
 import { Link } from "react-router-dom";
@@ -6,6 +7,16 @@ import "./Header.css";
 
 const Header = () => {
   const [submenu, setSubmenu] = useState({ main: null, sub: null });
+
+  const businessItems = [
+    "Ընդհանուր ծառայություններ",
+    "Փաթեթներ",
+    "Սպասարկումներ",
+    "Տեխնիկական աջակցություն",
+    "Հեռահաղորդակցություն",
+    "Տեսահսկում",
+    "Վերջնական ծառայություն",
+  ];
 
   return (
     <header className="header">
@@ -53,6 +64,7 @@ const Header = () => {
             )}
           </li>
 
+          {/* Բիզնեսի համար */}
           <li
             onMouseEnter={() => setSubmenu({ main: "for-business", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
@@ -60,18 +72,18 @@ const Header = () => {
             Բիզնեսի համար
             {submenu.main === "for-business" && (
               <ul className="submenu">
-                {/* 1-ին li՝ առանց sub-submenu */}
-                <li>Ընդհանուր ծառայություններ</li>
-
-                {/* 2-րդից մինչև 6-րդ li՝ sub-submenu-ով */}
-                {["Փաթեթներ", "Սպասարկումներ", "Տեխնիկական աջակցություն", "Հեռահաղորդակցություն", "Տեսահսկում"].map((item, index) => (
+                {businessItems.map((item, index) => (
                   <li
                     key={index}
                     onMouseEnter={() =>
-                      setSubmenu({ main: "for-business", sub: index })
+                      index > 0 && index < 6
+                        ? setSubmenu({ main: "for-business", sub: index })
+                        : null
                     }
                     onMouseLeave={() =>
-                      setSubmenu({ main: "for-business", sub: null })
+                      index > 0 && index < 6
+                        ? setSubmenu({ main: "for-business", sub: null })
+                        : null
                     }
                   >
                     {item}
@@ -84,8 +96,6 @@ const Header = () => {
                     )}
                   </li>
                 ))}
-
-                <li>Վերջնական ծառայություն</li>
               </ul>
             )}
           </li>
@@ -103,9 +113,8 @@ const Header = () => {
       </nav>
 
       <div className="right">
-        <span>
-          <FaUser size={20} />
-          Մուտք
+        <span className="user-icon">
+          <FaUser size={20} />Մուտք
         </span>
         <Link to="/login" className="login-btn">
           Միացի՜ր հիմա

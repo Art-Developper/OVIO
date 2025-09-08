@@ -1,21 +1,25 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 10px 40px;
   background: white;
   border-bottom: 1px solid #ddd;
   font-family: Arial, sans-serif;
-  position: relative;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+  margin: 0;
 }
 
-/* Logo */
+
 .logo img {
-  height: 40px;
+  height: 100px;
 }
 
-/* Main menu */
 .menu ul {
   display: flex;
   gap: 25px;
@@ -30,7 +34,7 @@
   font-weight: 500;
 }
 
-/* Menu links */
+
 .menu li a {
   text-decoration: none;
   color: #000;
@@ -39,13 +43,13 @@
 }
 
 .menu li:hover > a {
-  color: #53079d; /* Hover color */
+  color: #53079d; 
 }
 
-/* First-level submenu */
+
 .menu .submenu {
   position: absolute;
-  top: 100%; /* Փոփոխվում է սկզբում */
+  top: 100%;
   left: 0;
   background: white;
   padding: 10px;
@@ -57,16 +61,15 @@
   z-index: 100;
 }
 
-/* Show first-level submenu on hover */
 .menu li:hover > .submenu {
   display: flex;
 }
 
-/* Sub-submenu (կողքից բացվող) */
+
 .menu .sub-submenu {
   position: absolute;
   top: 0;
-  left: 100%; /* կողքից բացվում է parent submenu-ից */
+  left: 100%;
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -76,19 +79,18 @@
   z-index: 200;
 }
 
-/* Show sub-submenu on hover */
 .menu li:hover > .sub-submenu {
   display: flex;
 }
 
-/* Right-side items (login / user) */
+
 .right {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Login button */
+
 .login-btn {
   padding: 8px 20px;
   background: #53079d;
@@ -103,7 +105,7 @@
   background: #3a056e;
 }
 
-/* User icon with text */
+
 .user-icon {
   display: flex;
   align-items: center;
@@ -112,7 +114,7 @@
   color: #000;
 }
 
-/* Optional: hover effect for submenu items */
+
 .menu .submenu li:hover {
   background-color: #f5f5f5;
 }
