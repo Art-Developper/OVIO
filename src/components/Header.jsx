@@ -47,13 +47,17 @@ const Header = () => {
           >
             Հատուկ առաջարկներ
             {submenu.main === "special" && (
-              <ul className="submenu">
-                <li>Բոլորը</li>
-                <li>Մինչև 40 000 ֏ նվեր</li>
-                <li>2 ամսի անվճար․ տեսահսկում</li>
-                <li>PowerPlay խաղային ծառայություն</li>
-                <li>OVIO - Վեգա</li>
-              </ul>
+              <div className="submenu two-columns">
+                <ul>
+                  <li>Բոլորը</li>
+                  <li>Մինչև 40 000 ֏ նվեր</li>
+                  <li>2 ամսի անվճար․ տեսահսկում</li>
+                </ul>
+                <ul>
+                  <li>PowerPlay խաղային ծառայություն</li>
+                  <li>OVIO - Վեգա</li>
+                </ul>
+              </div>
             )}
           </li>
 
@@ -63,15 +67,19 @@ const Header = () => {
           >
             Տան համար
             {submenu.main === "courses" && (
-              <ul className="submenu">
-                <li>Բոլորը</li>
-                <li>All in փաթեթներ</li>
-                <li>Ինտերնետ</li>
-                <li>Wink TV</li>
-                <li>Wink TV հավելված</li>
-                <li>Տեսահսկում</li>
-                <li>Հեռախոսակապ</li>
-              </ul>
+              <div className="submenu two-columns-courses">
+                <ul>
+                  <li>Բոլորը</li>
+                  <li>All in փաթեթներ</li>
+                  <li>Ինտերնետ</li>
+                  <li>Wink TV</li>
+                </ul>
+                <ul>
+                  <li>Wink TV հավելված</li>
+                  <li>Տեսահսկում</li>
+                  <li>Հեռախոսակապ</li>
+                </ul>
+              </div>
             )}
           </li>
 
