@@ -2,18 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 15px 40px;
+  padding: 15px 20px;
   background: white;
   border-bottom: 1px solid #ddd;
   font-family: Arial, sans-serif;
-  margin-top: 15px;
   position: relative;
   width: 1855px;
   z-index: 1000;
 }
 
 .logo img {
-  height: 80px;
+  height: 95px;
 }
 
 .menu ul {

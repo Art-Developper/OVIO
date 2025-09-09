@@ -11,7 +11,7 @@
   display: flex !important;
   align-items: center;
   justify-content: space-between;
-  min-height: 450px;
+  height: 774px;
   background: #4B0082;
   box-sizing: border-box;
   position: relative;
@@ -23,18 +23,18 @@
 }
 
 .carousel-text h1 {
-    font-weight: 250;
-    text-align: center;
-    font-size:  3.7142857143rem;
-    color: #00f0ff;
-    margin-bottom: 15px;
+  font-size: 3.5rem; 
+  font-weight: 300; 
+  text-align: center;
+  color: #00f0ff;
+  margin-bottom: 15px;
 }
 
 .carousel-text p {
-    text-align: center;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    max-width: 90%;
+  font-size: 1rem; 
+  text-align: center;
+  margin-bottom: 30px;
+  max-width: 90%;
 }
 
 .carousel-buttons {
@@ -74,10 +74,12 @@
 
 .carousel-image {
   width: 55%;
+  height: 100%;
   position: relative;
+  align-items: end;
   justify-content: flex-end;
   overflow: hidden;
-  ackground-size: cover; 
+  background-size: cover; 
   background-position: 50%;
 }
 
@@ -85,42 +87,12 @@
   width: 100%;
   height: 100%; 
   object-fit: cover;
-  ackground-size: cover; 
+  background-size: cover; 
   background-position: 50%;
   border-radius: 20% 0  0 20%;
   display: block;
 }
 
-.slick-dots {
-  position: absolute !important;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  display: flex !important;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 10;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.slick-dots li {
-  margin: 0;
-}
-
-.slick-dots li button:before {
-  font-size: 14px;
-  color: #00f0ff; /* կապույտ գույն */
-  opacity: 0.5;
-  content: '•';  /* Կետ */
-}
-
-.slick-dots li.slick-active button:before {
-  opacity: 1;
-  color: #00f0ff; /* ավելի պայծառ կապույտ */
-}
-/* React Slick fixes */
 .slick-slider {
   width: 100%;
   overflow: hidden;

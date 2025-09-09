@@ -1,11 +1,12 @@
 .top-bar {
   background: #fff;
   border-bottom: 1px solid #ddd;
-  padding: 8px 40px;
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+  margin-top: 10px;
   color: #555;
   flex-wrap: wrap;
   position: relative;
