@@ -132,9 +132,7 @@ const MyCarousel = () => {
                 )}
                 {slide.buttons.includes("follow") &&(
                   <button className="btn-filled">Բաժանորդագրվի՜ր</button>
-                )
-
-                }
+                )}
               </div>
             </div>
             <div className="carousel-image">
