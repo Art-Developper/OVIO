@@ -9,13 +9,26 @@ const Header = () => {
   const [submenu, setSubmenu] = useState({ main: null, sub: null });
 
   const businessItems = [
-    "Ընդհանուր ծառայություններ",
-    "Փաթեթներ",
-    "Սպասարկումներ",
-    "Տեխնիկական աջակցություն",
-    "Հեռահաղորդակցություն",
-    "Տեսահսկում",
-    "Վերջնական ծառայություն",
+    { name: "Բոլորը" },
+    { 
+      name: "Տվյալներ մշակման կենտրոն", 
+      subItems: ["Տվյալների մշակման կենտորնի մասին", "OVIO Cloud", "Colocation","Դոմեն","Հոսթինգ"] 
+    },
+    { 
+      name: "Ինտերնետ", 
+      subItems: ["Երաշխավորված ինտերնետ", "Mono Office Ինտերնետ","Տվյալների փոխանցում","WI-FI Promo"] 
+    },
+    { 
+      name: "Տեսահսկում և տեսավերլուծություն", 
+      subItems: ["Տեսահսկում բիզնեսի համար", "Տեսահսկում պատվերների ստացման կետեր"] 
+    },
+    { name: "Սմարթ TV" ,
+      subItems: ["Wink կորպորատիվ", "Wink TV Office","Wink Hotels"] 
+    },
+    { name: "Հեռախոսի ծառայություններ",
+      subItems: ["Կորպորատիվ հեռախոսակապ","SOHO հեռախոսակապ","Քառանիշ համար","Cloud ԱՀԿ","Վիրտուալ ԱՀԿ","Free Phone"]
+     },
+    { name: "Օպերատորներ" }
   ];
 
   return (
@@ -28,7 +41,6 @@ const Header = () => {
 
       <nav className="menu">
         <ul>
-          {/* Հատուկ առաջարկներ */}
           <li
             onMouseEnter={() => setSubmenu({ main: "special", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
@@ -45,7 +57,6 @@ const Header = () => {
             )}
           </li>
 
-          {/* Տան համար */}
           <li
             onMouseEnter={() => setSubmenu({ main: "courses", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
@@ -64,7 +75,6 @@ const Header = () => {
             )}
           </li>
 
-          {/* Բիզնեսի համար */}
           <li
             onMouseEnter={() => setSubmenu({ main: "for-business", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
@@ -76,22 +86,18 @@ const Header = () => {
                   <li
                     key={index}
                     onMouseEnter={() =>
-                      index > 0 && index < 6
-                        ? setSubmenu({ main: "for-business", sub: index })
-                        : null
+                      item.subItems ? setSubmenu({ main: "for-business", sub: index }) : null
                     }
                     onMouseLeave={() =>
-                      index > 0 && index < 6
-                        ? setSubmenu({ main: "for-business", sub: null })
-                        : null
+                      item.subItems ? setSubmenu({ main: "for-business", sub: null }) : null
                     }
                   >
-                    {item}
-                    {submenu.sub === index && (
+                    {item.name}
+                    {submenu.sub === index && item.subItems && (
                       <ul className="submenu sub-submenu">
-                        <li>{item} A</li>
-                        <li>{item} B</li>
-                        <li>{item} C</li>
+                        {item.subItems.map((subItem, subIndex) => (
+                          <li key={subIndex}>{subItem}</li>
+                        ))}
                       </ul>
                     )}
                   </li>

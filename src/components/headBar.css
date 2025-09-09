@@ -1,17 +1,17 @@
 .top-bar {
   background: #fff;
   border-bottom: 1px solid #ddd;
-  padding: 8px 20px;
+  padding: 8px 40px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   font-size: 14px;
   color: #555;
-  flex-wrap: wrap; 
-  position: fixed;   
-  top: 0;            
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;       
+  width: 100%;
   z-index: 1000;
 }
 
@@ -19,7 +19,7 @@
 .top-right {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
   flex-wrap: wrap;
 }
 
@@ -27,10 +27,6 @@
   display: flex;
   align-items: center;
   gap: 6px;
-}
-
-.top-right span:hover{
-  color: #53079d;
 }
 
 .icon {
@@ -53,13 +49,8 @@
 .lang {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.lang:hover {
-  opacity: 0.8;
 }
 
 .lang img {
@@ -67,21 +58,4 @@
   height: 16px;
   border: 1px solid #ccc;
   object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 15px;
-    font-size: 13px;
-  }
-
-  .top-left, .top-right {
-    gap: 15px;
-  }
-
-  .lang {
-    margin-top: 8px;
-  }
 }
