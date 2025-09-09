@@ -36,7 +36,7 @@ const steps = [
 
 const CARD_WIDTH = 280;
 const CARD_MARGIN_RIGHT = 20;
-const VISIBLE_CARDS = 2;
+const VISIBLE_CARDS = 1;
 
 const WhyOvio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,7 +56,7 @@ const WhyOvio = () => {
 
       <div className="steps-wrapper">
         <button
-          className="scroll-button left"
+          className="scroll-button.left scroll-button"
           onClick={handlePrev}
           disabled={currentIndex === 0}
           aria-label="Previous"

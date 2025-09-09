@@ -1,91 +1,94 @@
 .why-ovio-wrapper {
-          padding: 20px;
-          max-width: 1200px;
-          margin: auto;
-          font-family: "Arial", sans-serif;
-        }
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: "Arial", sans-serif;
+}
 
-        h2 {
-          margin-bottom: 24px;
-          font-weight: 700;
-          font-size: 24px;
-          text-align: center;
-        }
+h2 {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+}
 
-        .steps-wrapper {
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          width: 100vw; /* ամբողջ էկրան */
-          max-width: 100%;
-          padding: 0 60px; /* կոճակների համար բաց թողնում ենք */
-          box-sizing: border-box;
-          overflow: hidden;
-        }
+.steps-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100vw;
+  /* ամբողջ էկրան */
+  max-width: 100%;
+  padding: 0 60px;
+  /* կոճակների համար բաց թողնում ենք */
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
-        .steps-container {
-          width: 100%;
-          overflow: hidden;
-          border-radius: 20px;
-          background: white;
-          box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
-          position: relative;
-        }
+.steps-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.05);
+  position: relative;
+}
 
-        .steps-inner {
-          display: flex;
-          gap: 20px;
-          transition: transform 0.5s ease;
-          will-change: transform;
-          padding: 20px 0;
-          box-sizing: content-box;
-        }
+.steps-inner {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  padding: 20px 0;
+  box-sizing: content-box;
+}
 
-        .step {
-          width: 380px;
-          height: 125px;
-          background: #fff;
-          border-radius: 20px;
-          box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
-          display: flex;
-          padding: 20px;
-          position: relative;
-          flex-shrink: 0;
-        }
+.step {
+  width: 380px;
+  height: 125px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
+  display: flex;
+  padding: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
 
-        .step-number {
-          font-weight: 700;
-          font-size: 26px;
-          color: white;
-          width: 60px;
-          height: 140px;
-          border-radius: 0 50% 50% 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-right: 20px;
-          position: relative;
-          left: -20px;
-          box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
-          user-select: none;
-          background-color: #00e0de; /* թեթև կապույտ */
-        }
+.step-number {
+  font-weight: 700;
+  font-size: 26px;
+  color: white;
+  width: 60px;
+  height: 140px;
+  border-radius: 0 50% 50% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  position: relative;
+  left: -20px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 0.1);
+  user-select: none;
+  background-color: #00e0de;
+  /* թեթև կապույտ */
+}
 
-        /* Text content inside the card */
-        .step-content h3 {
-          margin: 0 0 8px 0;
-          font-size: 20px;
-          font-weight: 600;
-        }
+/* Text content inside the card */
+.step-content h3 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
 
-        .step-content p {
-          margin: 0;
-          color: #666;
-          font-size: 14px;
-          line-height: 1.3;
-        }
+.step-content p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.3;
+}
 
 .scroll-button {
   background: white;
@@ -101,7 +104,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   transition: background-color 0.2s ease;
@@ -109,9 +111,9 @@
   z-index: 10;
 }
 
-        .scroll-button:hover:not(:disabled) {
-          background-color: #ffe6f2;
-        }
+.scroll-button:hover:not(:disabled) {
+  background-color: #ffe6f2;
+}
 
 .scroll-button:disabled {
   opacity: 0.3;
@@ -123,6 +125,6 @@
 }
 
 .scroll-button.right {
-      right: 10px;
-      box-shadow: 0 0 14px rgba(255, 0, 128, 0.6);
+  right: 10px;
+  box-shadow: 0 0 14px rgba(255, 0, 128, 0.6);
 }
