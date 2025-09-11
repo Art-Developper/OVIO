@@ -4,6 +4,8 @@ import Img1 from "../assets/OVIO.png";
 import Img2 from "../assets/Special.png";
 import Img3 from "../assets/Game.png";
 import Img4 from "../assets/Happygirl.png";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/700.css"; 
 
 const offers = [
   {
@@ -35,7 +37,7 @@ const offers = [
 
 const CARD_WIDTH = 532;
 const CARD_MARGIN_RIGHT = 20;
-const VISIBLE_CARDS = 2;
+const VISIBLE_CARDS = 3;
 
 const SpecialOffers = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

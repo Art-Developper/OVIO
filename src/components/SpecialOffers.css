@@ -1,16 +1,16 @@
 .special-offers-card {
   padding: 40px;
-  background: #f5f6fa;
+  background: #fff;
   border-radius: 20px;
   text-align: center;
   overflow: hidden;
 }
 
 .special-offers-card h2 {
-  font-size: 28px;
+  margin-bottom: 24px;
   font-weight: 700;
-  margin-bottom: 30px;
-  color: #2d2d2d;
+  font-size: 36px;
+  text-align: left;
 }
 
 .special-offers-wrapper {
@@ -76,9 +76,9 @@
 .offer-content {
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.6);
   padding: 20px;
   width: 100%;
+
   border-radius: 0 0 20px 20px;
 }
 
@@ -86,13 +86,15 @@
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
 }
 
 .offer-card p {
   font-size: 15px;
   margin-bottom: 20px;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 .offer-buttons {
