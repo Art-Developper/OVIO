@@ -36,7 +36,7 @@ const steps = [
 
 const CARD_WIDTH = 280;
 const CARD_MARGIN_RIGHT = 20;
-const VISIBLE_CARDS = 3;
+const VISIBLE_CARDS = 2;
 
 const WhyOvio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
