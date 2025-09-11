@@ -1,0 +1,80 @@
+.carousel-container {
+  position: relative;
+  width: 670px; 
+  margin: 50px auto;
+  overflow: hidden; 
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-cards {
+  display: flex; 
+  transition: transform 0.5s ease;
+}
+
+.carousel-card {
+  flex-shrink: 0; 
+  width: 670px; 
+  min-height: 400px;
+  margin-right: 20px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 30px;
+  border-radius: 25px; 
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); 
+}
+
+.carousel-card h3 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.carousel-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.carousel-card span {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%; 
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 12px;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.carousel-button.left {
+  left: -50px; 
+}
+
+
+.carousel-button.right {
+  right: -50px; 
+}
+.carousel-button:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: translateY(-50%) scale(1.1);
+}
