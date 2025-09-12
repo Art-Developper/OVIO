@@ -5,6 +5,7 @@ import WhyOvio from "../components/WhyOvio";
 import SpecialOffers from "../components/SpecialOffers";
 import ItsConvenientWithUs from "../components/It'sconvenientwithus";
 import TabsWithSlide from "../components/tabexample";
+import Footer from "../components/footer";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
     <SpecialOffers></SpecialOffers>
     <TabsWithSlide></TabsWithSlide>
     <ItsConvenientWithUs></ItsConvenientWithUs>
+    <Footer></Footer>
     </>
   );
 };

@@ -1,0 +1,74 @@
+.footer-logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: #0d1321;
+  color: #fff;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  width: 30%;
+  min-width: 280px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section li {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.map-box img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.control-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-form input,
+.control-form select,
+.control-form textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.control-form button {
+  background: #6a0dad;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
