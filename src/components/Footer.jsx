@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import blackLogo from "../assets/black_logo.png";
-// import { Facebook, YouTube, Instagram, Send } from "lucide-react";
+import { FaYoutube, FaFacebook, FaInstagram, FaPaperPlane } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -22,6 +22,8 @@ const Footer = () => {
           <li>Գրասենյակներ և ծածկույթ</li>
           <li>Միջազգային հավաստագրեր</li>
           <li>Գաղտնիության քաղաքականություն</li>
+        </ul>
+        <ul>
           <li>Բիզնեսի համար</li>
           <li>Օպերատորներ</li>
           <li>Օգնություն</li>
@@ -39,12 +41,12 @@ const Footer = () => {
         <div className="map-box">
           <img src="/images/map.png" alt="Քարտեզ" />
         </div>
-        {/* <div className="social-icons">
-          <Facebook/>
-          <YouTube />
-          <Instagram />
-          <Send />
-        </div> */}
+        <div className="social-icons">
+          <FaYoutube />
+          <FaFacebook />
+          <FaInstagram />
+          <FaPaperPlane />
+        </div>
       </div>
 
       <div className="footer-section">
