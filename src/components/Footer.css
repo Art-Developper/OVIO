@@ -1,11 +1,12 @@
 .footer-logo {
   width: 100%;
-  text-align: center;
+  text-align: left;
   margin-bottom: 25px;
+  border-bottom: 1px solid grey;
 }
 
 .footer-logo img {
-  height: 50px;
+  height: 100px;
 }
 
 .footer {
