@@ -5,6 +5,7 @@ import WhyOvio from "../components/WhyOvio";
 import SpecialOffers from "../components/SpecialOffers";
 import ItsConvenientWithUs from "../components/It'sconvenientwithus";
 import TabsWithSlide from "../components/tabexample";
+import OvioViedo from "../components/OvioViedo";
 import Footer from "../components/footer";
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
     <WhyOvio></WhyOvio>
     <SpecialOffers></SpecialOffers>
     <TabsWithSlide></TabsWithSlide>
+    <OvioViedo></OvioViedo>
     <ItsConvenientWithUs></ItsConvenientWithUs>
     <Footer></Footer>
     </>
