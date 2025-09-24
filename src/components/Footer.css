@@ -28,13 +28,20 @@
   margin-bottom: 15px;
 }
 
-.footer-section ul {
+.footer-section-1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.footer-section-1 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-section li {
+.footer-section-1 li {
+  margin-left: 6px;
   margin-bottom: 6px;
   font-size: 14px;
 }
@@ -46,10 +53,16 @@
 
 .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 2px;
   margin-top: 15px;
-  width: 250px;
-  height: 30px; 
+}
+
+.icon {
+  width: 30px;
+  height: 40px;
+  color: white;
+  margin-top: 20px;
+  margin-left: 60px;
 }
 
 .control-form {

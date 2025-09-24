@@ -73,8 +73,8 @@
 }
 
 .carousel-image {
-  width: 70%;
-  height: 100%;
+  /* width: 70%;
+  height: 100%; */
   position: relative;
   align-items: end;
   justify-content: flex-end;
@@ -89,7 +89,7 @@
   object-fit: cover;
   background-size: cover; 
   background-position: 50%;
-  border-radius: 20% 0  0 20%;
+  border-radius: 50% 0 0 50%;
   display: block;
 }
 
