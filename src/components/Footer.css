@@ -12,7 +12,7 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  background: #0d1321;
+  background: #101828;
   color: #fff;
   padding: 40px;
   flex-wrap: wrap;
@@ -48,6 +48,8 @@
   display: flex;
   gap: 12px;
   margin-top: 15px;
+  width: 250px;
+  height: 30px; 
 }
 
 .control-form {

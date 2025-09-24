@@ -1,7 +1,12 @@
 import React from "react";
 import "./Footer.css";
 import blackLogo from "../assets/black_logo.png";
-import { FaYoutube, FaFacebook, FaInstagram, FaPaperPlane } from "react-icons/fa";
+import {
+  FaYoutube,
+  FaFacebook,
+  FaInstagram,
+  FaPaperPlane,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -38,9 +43,51 @@ const Footer = () => {
 
       <div className="footer-section">
         <h3>Սպասարկման քարտեզ</h3>
-        <div className="map-box">
-          <img src="/images/map.png" alt="Քարտեզ" />
+        <div style={{ position: "relative", overflow: "hidden" }}>
+          <a
+            href="https://yandex.com/maps/org/ovio/112582271163/?utm_medium=mapframe&utm_source=maps"
+            style={{
+              color: "#eee",
+              fontSize: "12px",
+              position: "absolute",
+              top: "0px",
+            }}
+          >
+            Ovio
+          </a>
+          <a
+            href="https://yandex.com/maps/10262/yerevan/category/telecommunication_company/184107799/?utm_medium=mapframe&utm_source=maps"
+            style={{
+              color: "#eee",
+              fontSize: "12px",
+              position: "absolute",
+              top: "14px",
+            }}
+          >
+            Телекоммуникационная компания в Ереване
+          </a>
+          <a
+            href="https://yandex.com/maps/10262/yerevan/category/data_center/171647048345/?utm_medium=mapframe&utm_source=maps"
+            style={{
+              color: "#eee",
+              fontSize: "12px",
+              position: "absolute",
+              top: "28px",
+            }}
+          >
+            Дата-центр в Ереване
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d663.114631263792!2d44.45453626080043!3d40.17462049080225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abdaa42ee6895%3A0xcb433ecac1894517!2zT1ZJTyDQnNCw0LvQsNGC0LjRjyDRgdC10YDQstC40YEt0YbQtdC90YLRgA!5e1!3m2!1sen!2sam!4v1758689085074!5m2!1sen!2sam"
+            width="600"
+            height="250"
+            style={{ border: 1, borderRadius: "20px"}}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
+
         <div className="social-icons">
           <FaYoutube />
           <FaFacebook />
