@@ -17,19 +17,24 @@ import WifiIcon from '@mui/icons-material/Wifi';
 // Փաթեթների տվյալներ
 const packages = {
   '1': [
-    { title: 'Plan 1', internet: '100 Մբ/վ', tv: 'Wink TV', price: '7,500 ֏' },
-    { title: 'Plan 2', internet: '200 Մբ/վ', tv: 'All Channels', price: '9,000 ֏' },
-    { title: 'Plan 3', internet: '300 Մբ/վ', tv: 'Premium', price: '12,000 ֏' },
-    { title: 'Plan 4', internet: '500 Մբ/վ', tv: 'Ultra HD', price: '15,000 ֏' },
-    { title: 'Plan 5', internet: '1 Գբ/վ', tv: 'Full Pack', price: '20,000 ֏' },
+    { title: 'All in տարեկան 1', internet: '100 Մբ/վ', tv: 'Wink TV', price: '7,500 ֏' },
+    { title: 'All in տարեկան 2', internet: '150 Մբ/վ', tv: 'All Channels', price: '8,500 ֏' },
+    { title: 'All in տարեկան 3', internet: '300 Մբ/վ', tv: 'Premium', price: '9,900 ֏' },
+    { title: 'Wi-fly տարեկան 1', internet: '100 Մբ/վ', wifi: 'Ultra HD', price: '6,000 ֏' },
+    { title: 'Wi fly տարեկան 2', internet: '200 Մբ/վ', wifi: 'Full Pack', price: '7,000 ֏' },
   ],
   '2': [
-    { title: 'All In 1', internet: '50 Մբ/վ', tv: 'Basic TV', price: '5,500 ֏' },
-    { title: 'All In 2', internet: '150 Մբ/վ', tv: 'All Channels', price: '8,500 ֏' },
+    { title: 'All in տարեկան 1', internet: '100 Մբ/վ', tv: 'Wink TV', price: '7,500 ֏' },
+    { title: 'All in տարեկան 2', internet: '150 Մբ/վ', tv: 'All Channels', price: '8,500 ֏' },
+    { title: 'All in տարեկան 3', internet: '300 Մբ/վ', tv: 'Premium', price: '9,900 ֏' },
+    { title: 'All in տարեկան 4'},,
+    { title: 'All in տարեկան 5',}
   ],
   '3': [
-    { title: 'Wi-Fly 1', internet: '75 Մբ/վ', tv: 'Wi-Fly TV', price: '6,500 ֏' },
-    { title: 'Wi-Fly 2', internet: '250 Մբ/վ', tv: 'Wi-Fly TV HD', price: '10,500 ֏' },
+    { title: 'Wi-Fly 1', internet: '75 Մբ/վ', wifi: 'Wi-Fly TV', price: '6,500 ֏' },
+    { title: 'Wi-Fly 2', internet: '250 Մբ/վ', wifi: 'Wi-Fly TV HD', price: '10,500 ֏' },
+    {},
+    {}
   ],
 };
 
@@ -40,18 +45,29 @@ function PackageCard({ pkg }) {
       <Typography variant="h6" fontWeight="bold" gutterBottom>
         {pkg.title}
       </Typography>
+
+      {/* Ինտերնետ */}
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
         <LanguageIcon color="primary" sx={{ mr: 1 }} />
         <Typography>Ինտերնետ՝ {pkg.internet}</Typography>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
-        <TvIcon color="secondary" sx={{ mr: 1 }} />
-        <Typography>{pkg.tv}</Typography>
-      </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
-        <WifiIcon sx={{ mr: 1 }} />
-        <Typography>WiFi</Typography>
-      </Box>
+
+      {/* TV (ցուցադրվում է միայն երբ pkg.tv-ն առկա է) */}
+      {pkg.tv && (
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
+          <TvIcon color="secondary" sx={{ mr: 1 }} />
+          <Typography>{pkg.tv}</Typography>
+        </Box>
+      )}
+
+      {/* WiFi (ցուցադրվում է միայն երբ pkg.wifi-ն առկա է) */}
+      {pkg.wifi && (
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
+          <WifiIcon sx={{ mr: 1 }} />
+          <Typography>WiFi</Typography>
+        </Box>
+      )}
+
       <Typography variant="h6" sx={{ mt: 2 }}>
         {pkg.price} / ամիս
       </Typography>
