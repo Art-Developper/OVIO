@@ -1,118 +1,361 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import Slide from '@mui/material/Slide';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import LanguageIcon from '@mui/icons-material/Language';
-import TvIcon from '@mui/icons-material/Tv';
-import WifiIcon from '@mui/icons-material/Wifi';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import Slide from "@mui/material/Slide";
+import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Collapse from "@mui/material/Collapse"; // Ավելացնում ենք Collapse կոմպոնենտը
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import LanguageIcon from "@mui/icons-material/Language";
+import TvIcon from "@mui/icons-material/Tv";
+import WifiIcon from "@mui/icons-material/Wifi";
+import FlashOnIcon from "@mui/icons-material/FlashOn"; // Նոր Icon
+import SmartDisplayIcon from "@mui/icons-material/SmartDisplay"; // Նոր Icon (հեռուստացույցի համար)
+import DevicesIcon from "@mui/icons-material/Devices"; // Նոր Icon (էկրանների համար)
+import AccessTimeIcon from "@mui/icons-material/AccessTime"; // Նոր Icon (Catch-Up-ի համար)
+import CardGiftcardIcon from "@mui/icons-material/CardGiftcard"; // Նոր Icon (Նվերի համար)
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore"; // Նոր Icon (սլաքի համար)
+import ExpandLessIcon from "@mui/icons-material/ExpandLess"; // Նոր Icon (սլաքի համար)
 
 // Փաթեթների տվյալներ
 const packages = {
-  '1': [
-    { title: 'All in տարեկան 1', internet: '100 Մբ/վ', tv: 'Wink TV', price: '7,500 ֏' },
-    { title: 'All in տարեկան 2', internet: '150 Մբ/վ', tv: 'All Channels', price: '8,500 ֏' },
-    { title: 'All in տարեկան 3', internet: '300 Մբ/վ', tv: 'Premium', price: '9,900 ֏' },
-    { title: 'Wi-fly տարեկան 1', internet: '100 Մբ/վ', wifi: 'Ultra HD', price: '6,000 ֏' },
-    { title: 'Wi fly տարեկան 2', internet: '200 Մբ/վ', wifi: 'Full Pack', price: '7,000 ֏' },
+  1: [
+    {
+      title: "All in տարեկան 1",
+      internet: "100 Մբ/վ",
+      tvPlatform: "Wink TV հարթակ",
+      tvDescription: "Լավագույն ֆիլմերն ու սերիալները",
+      channels: "115",
+      screens: "5 էկրանով",
+      catchUp: "3 օր",
+      wifi: true,
+      specialOffer: {
+        text: "Հատուկ առաջարկ նախատեսված է նոր բաժանորդների համար",
+        gift: "8,000 ֏",
+      },
+      price: "7,500 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "All in տարեկան 2",
+      internet: "150 Մբ/վ",
+      tvPlatform: "Wink TV հարթակ",
+      tvDescription: "Լավագույն ֆիլմերն ու սերիալները",
+      channels: "150",
+      screens: "5 էկրանով",
+      catchUp: "7 օր",
+      wifi: true,
+      price: "8,500 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "All in տարեկան 3",
+      internet: "300 Մբ/վ",
+      tvPlatform: "Wink TV հարթակ",
+      tvDescription: "Լավագույն ֆիլմերն ու սերիալները",
+      channels: "200",
+      screens: "10 էկրանով",
+      catchUp: "14 օր",
+      wifi: true,
+      specialOffer: {
+        text: "Մեծ զեղչ նոր բաժանորդների համար",
+        gift: "10,000 ֏",
+      },
+      price: "9,900 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "Wi-fly տարեկան 1",
+      internet: "100 Մբ/վ",
+      wifi: true,
+      price: "6,000 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "Wi fly տարեկան 2",
+      internet: "200 Մբ/վ",
+      wifi: true,
+      price: "7,000 ֏",
+      buttonText: "Միացնել հիմա",
+    },
   ],
-  '2': [
-    { title: 'All in տարեկան 1', internet: '100 Մբ/վ', tv: 'Wink TV', price: '7,500 ֏' },
-    { title: 'All in տարեկան 2', internet: '150 Մբ/վ', tv: 'All Channels', price: '8,500 ֏' },
-    { title: 'All in տարեկան 3', internet: '300 Մբ/վ', tv: 'Premium', price: '9,900 ֏' },
-    { title: 'All in տարեկան 4'},,
-    { title: 'All in տարեկան 5',}
+  2: [
+    {
+      title: "All In 1",
+      internet: "50 Մբ/վ",
+      tvPlatform: "Basic TV",
+      channels: "80",
+      screens: "5 էկրանով",
+      wifi: true,
+      price: "5,500 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "All In 2",
+      internet: "150 Մբ/վ",
+      tvPlatform: "All Channels",
+      channels: "130",
+      screens: "5 էկրանով",
+      catchUp: "3 օր",
+      wifi: true,
+      price: "8,500 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "All in տարեկան 3",
+      internet: "300 Մբ/վ",
+      tvPlatform: "All Channels",
+      channels: "130",
+      screens: "5 էկրանով",
+      catchUp: "3 օր",
+      wifi: true,
+      tv: "Premium",
+      price: "9,900 ֏",
+    },
+    { title: "All in տարեկան 4" },
+    { title: "All in տարեկան 5" },
   ],
-  '3': [
-    { title: 'Wi-Fly 1', internet: '75 Մբ/վ', wifi: 'Wi-Fly TV', price: '6,500 ֏' },
-    { title: 'Wi-Fly 2', internet: '250 Մբ/վ', wifi: 'Wi-Fly TV HD', price: '10,500 ֏' },
+  3: [
+    {
+      title: "Wi-Fly 1",
+      internet: "75 Մբ/վ",
+      wifi: true,
+      price: "6,500 ֏",
+      buttonText: "Միացնել հիմա",
+    },
+    {
+      title: "Wi-Fly 2",
+      internet: "250 Մբ/վ",
+      wifi: true,
+      price: "10,500 ֏",
+      buttonText: "Միացնել հիմա",
+    },
     {},
-    {}
+    {},
   ],
 };
 
 // Փաթեթի քարտ
 function PackageCard({ pkg }) {
-  return (
-    <Paper elevation={3} sx={{ p: 3, borderRadius: 3, minWidth: 250, textAlign: 'center', mx: 1 }}>
-      <Typography variant="h6" fontWeight="bold" gutterBottom>
-        {pkg.title}
-      </Typography>
+  const [expanded, setExpanded] = React.useState(false);
 
-      {/* Ինտերնետ */}
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
-        <LanguageIcon color="primary" sx={{ mr: 1 }} />
-        <Typography>Ինտերնետ՝ {pkg.internet}</Typography>
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
+  // Եթե փաթեթը դատարկ է, ոչինչ չենք ցուցադրում
+  if (!pkg || !pkg.title) {
+    return null;
+  }
+
+  return (
+    <Paper
+      elevation={3}
+      sx={{
+        borderRadius: 3,
+        minWidth: 280, // Ավելացնում ենք լայնությունը նկարին համապատասխան
+        height: "auto", // Բարձրությունը դարձնում ենք auto
+        textAlign: "left", // Տեքստը դեպի ձախ
+        mx: 1,
+        mb: 2, // Մի փոքր բացատ ցույց տալու համար
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between", // Բովանդակությունը տարածել քարտի բարձրությամբ
+        overflow: "hidden", // Թաքցնել այն, ինչը դուրս է գալիս քարտի սահմաններից
+      }}
+    >
+      {/* Վերևի մանուշակագույն հատված */}
+      <Box
+        sx={{
+          background: "linear-gradient(45deg, #7B24B3 30%, #4B0082 90%)", // Մանուշակագույն գրադիենտ
+          color: "white",
+          p: 2,
+          pb: 4, // Ավելի մեծ ներքևի բացատ
+          borderRadius: "12px 12px 0 0", // Միայն վերևի անկյունները կլորացված
+          textAlign: "center",
+          mb: 2, // Բացատ ներքևի բովանդակության հետ
+        }}
+      >
+        <Typography variant="h6" fontWeight="bold">
+          {pkg.title}
+        </Typography>
       </Box>
 
-      {/* TV (ցուցադրվում է միայն երբ pkg.tv-ն առկա է) */}
-      {pkg.tv && (
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
-          <TvIcon color="secondary" sx={{ mr: 1 }} />
-          <Typography>{pkg.tv}</Typography>
+      {/* Ծառայությունների ցանկ */}
+      <Box sx={{ p: 2, flexGrow: 1 }}>
+        {" "}
+        {/* flexGrow-ը թույլ կտա այս հատվածին զբաղեցնել առավելագույն տարածքը */}
+        {pkg.internet && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+            <LanguageIcon color="primary" sx={{ mr: 1 }} />
+            <Typography>Ինտերնետ՝ {pkg.internet}</Typography>
+          </Box>
+        )}
+        {pkg.tvPlatform && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+            <FlashOnIcon color="action" sx={{ mr: 1, color: "#FF5722" }} />{" "}
+            {/* Օրինակ՝ նարնջագույն */}
+            <Typography>{pkg.tvPlatform}</Typography>
+          </Box>
+        )}
+        {pkg.tvDescription && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5, ml: 3 }}>
+            {" "}
+            {/* Ներքաշված */}
+            {/* <MovieIcon sx={{ mr: 1, color: 'text.secondary' }} /> */}
+            <Typography variant="body2" color="text.secondary">
+              {pkg.tvDescription}
+            </Typography>
+          </Box>
+        )}
+        {pkg.channels && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+            <SmartDisplayIcon color="info" sx={{ mr: 1 }} />
+            <Typography>Ալիքներ՝ {pkg.channels}</Typography>
+          </Box>
+        )}
+        {pkg.screens && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+            <DevicesIcon color="success" sx={{ mr: 1 }} />
+            <Typography>Միաժամանակ՝ {pkg.screens}</Typography>
+          </Box>
+        )}
+        {pkg.catchUp && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+            <AccessTimeIcon color="warning" sx={{ mr: 1 }} />
+            <Typography>Catch-Up՝ {pkg.catchUp}</Typography>
+          </Box>
+        )}
+        {pkg.wifi && (
+          <Box sx={{ display: "flex", alignItems: "center", mb: 1.5 }}>
+            <WifiIcon sx={{ mr: 1 }} />
+            <Typography>WiFi</Typography>
+          </Box>
+        )}
+      </Box>
+
+      {/* Հատուկ առաջարկի բաժին */}
+      {pkg.specialOffer && (
+        <Box sx={{ p: 2, borderTop: "1px solid #eee" }}>
+          <Button
+            onClick={handleExpandClick}
+            sx={{
+              width: "100%",
+              justifyContent: "flex-start",
+              textTransform: "none",
+              color: "text.primary",
+              "&:hover": {
+                backgroundColor: "transparent",
+              },
+            }}
+            endIcon={expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          >
+            <Typography variant="body2" color="text.secondary">
+              {pkg.specialOffer.text}
+            </Typography>
+          </Button>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                mt: 1,
+                ml: 1,
+                p: 1,
+                borderRadius: 1,
+                background: "#f5f5f5",
+              }}
+            >
+              <CardGiftcardIcon color="error" sx={{ mr: 1 }} />
+              <Typography variant="body1" fontWeight="bold">
+                Նվեր {pkg.specialOffer.gift}
+              </Typography>
+            </Box>
+          </Collapse>
         </Box>
       )}
 
-      {/* WiFi (ցուցադրվում է միայն երբ pkg.wifi-ն առկա է) */}
-      {pkg.wifi && (
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
-          <WifiIcon sx={{ mr: 1 }} />
-          <Typography>WiFi</Typography>
-        </Box>
-      )}
-
-      <Typography variant="h6" sx={{ mt: 2 }}>
-        {pkg.price} / ամիս
-      </Typography>
-      <Button variant="contained" color="primary" sx={{ mt: 2 }}>
-        Միացնել հիմա
-      </Button>
+      {/* Գին և կոճակ */}
+      <Box sx={{ p: 2, textAlign: "center" }}>
+        <Typography
+          variant="h5"
+          fontWeight="bold"
+          sx={{ mt: 2, color: "#4B0082" }}
+        >
+          {" "}
+          {/* Մանուշակագույն գին */}
+          {pkg.price}
+          <Typography
+            component="span"
+            variant="body1"
+            sx={{ ml: 1, color: "text.secondary" }}
+          >
+            / Ամսական
+          </Typography>
+        </Typography>
+        <Button
+          variant="contained"
+          sx={{
+            mt: 2,
+            background: "linear-gradient(45deg, #7B24B3 30%, #4B0082 90%)", // Մանուշակագույն գրադիենտ կոճակ
+            color: "white",
+            borderRadius: 2,
+            py: 1.5,
+            px: 4,
+            fontSize: "1rem",
+            textTransform: "none",
+          }}
+        >
+          {pkg.buttonText || "Միացնել հիմա"}
+        </Button>
+      </Box>
     </Paper>
   );
 }
 
-// Tabs + multi-card carousel կոմպոնենտ
 export default function TabsWithMultiCarousel() {
-  const [tabValue, setTabValue] = React.useState('1');
+  const [tabValue, setTabValue] = React.useState("1");
   const [currentIndex, setCurrentIndex] = React.useState(0);
-  const [direction, setDirection] = React.useState('left');
+  const [direction, setDirection] = React.useState("left");
 
-  const itemsPerPage = 3; // Միանգամից քանի փաթեթ ցույց տալ
+  const itemsPerPage = 3;
 
   const handleTabChange = (_event, newValue) => {
     setTabValue(newValue);
     setCurrentIndex(0);
-    setDirection('left');
+    setDirection("left");
   };
 
   const handleNext = () => {
-    if (currentIndex + itemsPerPage < packages[tabValue].length) {
-      setDirection('left');
+    if (
+      packages[tabValue] &&
+      currentIndex + itemsPerPage < packages[tabValue].length
+    ) {
+      setDirection("left");
       setCurrentIndex((prev) => prev + 1);
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setDirection('right');
+      setDirection("right");
       setCurrentIndex((prev) => prev - 1);
     }
   };
 
-  const currentPackages = packages[tabValue].slice(currentIndex, currentIndex + itemsPerPage);
+  const currentPackages = packages[tabValue]
+    ? packages[tabValue].slice(currentIndex, currentIndex + itemsPerPage)
+    : [];
 
   return (
-    <Box sx={{ width: '100%', typography: 'body1' }}>
+    <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={tabValue}>
-        {/* Tabs */}
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <TabList onChange={handleTabChange} aria-label="Tabs with carousel">
             <Tab label="Լավագույնը" value="1" />
             <Tab label="All in" value="2" />
@@ -120,14 +363,13 @@ export default function TabsWithMultiCarousel() {
           </TabList>
         </Box>
 
-        {/* Carousel */}
         <Box
           sx={{
             mt: 3,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: 450,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: 600, // Ավելացրել ենք բարձրությունը, քանի որ քարտերը ավելի մեծ են դարձել
           }}
         >
           <IconButton onClick={handlePrev} disabled={currentIndex === 0}>
@@ -137,10 +379,10 @@ export default function TabsWithMultiCarousel() {
           <Box
             sx={{
               mx: 2,
-              width: 1000, // parent Box լայնություն՝ երեք քարտի համար
-              display: 'flex',
-              justifyContent: 'flex-start',
-              overflow: 'hidden',
+              width: 1000,
+              display: "flex",
+              justifyContent: "flex-start",
+              overflow: "hidden",
             }}
           >
             <Slide
@@ -150,9 +392,9 @@ export default function TabsWithMultiCarousel() {
               unmountOnExit
               key={`${tabValue}-${currentIndex}`}
             >
-              <Box sx={{ display: 'flex' }}>
-                {currentPackages.map((pkg) => (
-                  <PackageCard key={pkg.title} pkg={pkg} />
+              <Box sx={{ display: "flex" }}>
+                {currentPackages.map((pkg, index) => (
+                  <PackageCard key={pkg.title || `empty-${index}`} pkg={pkg} />
                 ))}
               </Box>
             </Slide>
@@ -160,7 +402,10 @@ export default function TabsWithMultiCarousel() {
 
           <IconButton
             onClick={handleNext}
-            disabled={currentIndex + itemsPerPage >= packages[tabValue].length}
+            disabled={
+              !packages[tabValue] ||
+              currentIndex + itemsPerPage >= packages[tabValue].length
+            }
           >
             <ArrowForwardIosIcon />
           </IconButton>
