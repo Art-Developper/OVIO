@@ -7,6 +7,7 @@ import ItsConvenientWithUs from "../components/It'sconvenientwithus";
 import TabsWithSlide from "../components/tabexample";
 import OvioViedo from "../components/OvioViedo";
 import Footer from "../components/footer";
+import TheBest from "../components/TheBEst";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
     <TabsWithSlide></TabsWithSlide>
     <OvioViedo></OvioViedo>
     <ItsConvenientWithUs></ItsConvenientWithUs>
+    <TheBest></TheBest>
     <Footer></Footer>
     </>
   );
