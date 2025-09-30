@@ -27,7 +27,7 @@ import shanthd from "../assets/Shant_HD_1629105724.png";
 import shantserial from "../assets/Shant_Serial.png";
 import shantgyumri from "../assets/Shant_Gyumri.png";
 import shantmusic from "../assets/Shant_Music.png";
-import shantnews from "../assets/ShantNews.png";
+// import shantnews from "../assets/ShantNews.png";
 
 const channels = {
   viju: [
@@ -51,7 +51,7 @@ const channels = {
     { background_image: shantserial, text: "Shant Serial" },
     { background_image: shantgyumri, text: "Shant Gyumri" },
     { background_image: shantmusic, text: "Shant Music" },
-    { background_image: shantnews, text: "Shant News" },
+    // { background_image: shantnews, text: "Shant News" },
   ],
 };
 
@@ -120,8 +120,8 @@ export default function ChannelCarousel() {
               key={index}
               sx={{
                 flexShrink: 0,
-                width: 320,
-                height: 200,
+                width: 650,
+                height: 400,
                 backgroundImage: `url(${channel.background_image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
