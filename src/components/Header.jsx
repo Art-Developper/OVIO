@@ -3,96 +3,124 @@ import { useState } from "react";
 import OVIOLogo from "../assets/OVIOLogo.png";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
-import "./Header.css";
 
 const Header = () => {
   const [submenu, setSubmenu] = useState({ main: null, sub: null });
 
   const businessItems = [
     { name: "Բոլորը" },
-    { 
-      name: "Տվյալներ մշակման կենտրոն", 
-      subItems: ["Տվյալների մշակման կենտորնի մասին", "OVIO Cloud", "Colocation","Դոմեն","Հոսթինգ"] 
+    {
+      name: "Տվյալներ մշակման կենտրոն",
+      subItems: [
+        "Տվյալների մշակման կենտորնի մասին",
+        "OVIO Cloud",
+        "Colocation",
+        "Դոմեն",
+        "Հոսթինգ",
+      ],
     },
-    { 
-      name: "Ինտերնետ", 
-      subItems: ["Երաշխավորված ինտերնետ", "Mono Office Ինտերնետ","Տվյալների փոխանցում","WI-FI Promo"] 
+    {
+      name: "Ինտերնետ",
+      subItems: [
+        "Երաշխավորված ինտերնետ",
+        "Mono Office Ինտերնետ",
+        "Տվյալների փոխանցում",
+        "WI-FI Promo",
+      ],
     },
-    { 
-      name: "Տեսահսկում և տեսավերլուծություն", 
-      subItems: ["Տեսահսկում բիզնեսի համար", "Տեսահսկում պատվերների ստացման կետեր"] 
+    {
+      name: "Տեսահսկում և տեսավերլուծություն",
+      subItems: ["Տեսահսկում բիզնեսի համար", "Տեսահսկում պատվերների ստացման կետեր"],
     },
-    { name: "Սմարթ TV" ,
-      subItems: ["Wink կորպորատիվ", "Wink TV Office","Wink Hotels"] 
+    {
+      name: "Սմարթ TV",
+      subItems: ["Wink կորպորատիվ", "Wink TV Office", "Wink Hotels"],
     },
-    { name: "Հեռախոսի ծառայություններ",
-      subItems: ["Կորպորատիվ հեռախոսակապ","SOHO հեռախոսակապ","Քառանիշ համար","Cloud ԱՀԿ","Վիրտուալ ԱՀԿ","Free Phone"]
-     },
-    { name: "Օպերատորներ" }
+    {
+      name: "Հեռախոսի ծառայություններ",
+      subItems: [
+        "Կորպորատիվ հեռախոսակապ",
+        "SOHO հեռախոսակապ",
+        "Քառանիշ համար",
+        "Cloud ԱՀԿ",
+        "Վիրտուալ ԱՀԿ",
+        "Free Phone",
+      ],
+    },
+    { name: "Օպերատորներ" },
   ];
 
   return (
-    <header className="header">
+    <header className="flex items-center justify-between px-10 py-3 bg-white border-b border-gray-300 font-sans relative z-50">
+      {/* Logo */}
       <div className="logo">
         <Link to="/">
-          <img src={OVIOLogo} alt="Ovio Logo" />
+          <img src={OVIOLogo} alt="Ovio Logo" className="h-24" />
         </Link>
       </div>
 
+      {/* Menu */}
       <nav className="menu">
-        <ul>
+        <ul className="flex gap-6">
+          {/* Հատուկ առաջարկներ */}
           <li
+            className="relative font-medium cursor-pointer"
             onMouseEnter={() => setSubmenu({ main: "special", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
           >
             Հատուկ առաջարկներ
             {submenu.main === "special" && (
-              <div className="submenu two-columns">
-                <ul>
-                  <li>Բոլորը</li>
-                  <li>Մինչև 40 000 ֏ նվեր</li>
-                  <li>2 ամսի անվճար․ տեսահսկում</li>
+              <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-xl grid grid-cols-2 gap-5 min-w-[400px] p-4">
+                <ul className="flex flex-col gap-2">
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Բոլորը</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Մինչև 40 000 ֏ նվեր</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">2 ամսի անվճար․ տեսահսկում</li>
                 </ul>
-                <ul>
-                  <li>PowerPlay խաղային ծառայություն</li>
-                  <li>OVIO - Վեգա</li>
+                <ul className="flex flex-col gap-2">
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">PowerPlay խաղային ծառայություն</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">OVIO - Վեգա</li>
                 </ul>
               </div>
             )}
           </li>
 
+          {/* Տան համար */}
           <li
+            className="relative font-medium cursor-pointer"
             onMouseEnter={() => setSubmenu({ main: "courses", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
           >
             Տան համար
             {submenu.main === "courses" && (
-              <div className="submenu two-columns-courses">
-                <ul>
-                  <li>Բոլորը</li>
-                  <li>All in փաթեթներ</li>
-                  <li>Ինտերնետ</li>
-                  <li>Wink TV</li>
+              <div className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-xl grid grid-cols-2 gap-5 min-w-[400px] p-4">
+                <ul className="flex flex-col gap-2">
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Բոլորը</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">All in փաթեթներ</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Ինտերնետ</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Wink TV</li>
                 </ul>
-                <ul>
-                  <li>Wink TV հավելված</li>
-                  <li>Տեսահսկում</li>
-                  <li>Հեռախոսակապ</li>
+                <ul className="flex flex-col gap-2">
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Wink TV հավելված</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Տեսահսկում</li>
+                  <li className="hover:bg-gray-100 hover:text-purple-700 px-3 py-1 rounded-md">Հեռախոսակապ</li>
                 </ul>
               </div>
             )}
           </li>
 
+          {/* Բիզնեսի համար */}
           <li
+            className="relative font-medium cursor-pointer"
             onMouseEnter={() => setSubmenu({ main: "for-business", sub: null })}
             onMouseLeave={() => setSubmenu({ main: null, sub: null })}
           >
             Բիզնեսի համար
             {submenu.main === "for-business" && (
-              <ul className="submenu">
+              <ul className="absolute top-full left-0 bg-white shadow-lg border border-gray-200 rounded-xl flex flex-col gap-2 min-w-[220px] p-3">
                 {businessItems.map((item, index) => (
                   <li
                     key={index}
+                    className="relative px-3 py-1 rounded-md hover:bg-gray-100 hover:text-purple-700"
                     onMouseEnter={() =>
                       item.subItems ? setSubmenu({ main: "for-business", sub: index }) : null
                     }
@@ -102,9 +130,14 @@ const Header = () => {
                   >
                     {item.name}
                     {submenu.sub === index && item.subItems && (
-                      <ul className="submenu sub-submenu">
+                      <ul className="absolute top-0 left-full ml-2 bg-white shadow-lg border border-gray-200 rounded-xl flex flex-col gap-2 min-w-[220px] p-3">
                         {item.subItems.map((subItem, subIndex) => (
-                          <li key={subIndex}>{subItem}</li>
+                          <li
+                            key={subIndex}
+                            className="px-3 py-1 rounded-md hover:bg-gray-100 hover:text-purple-700"
+                          >
+                            {subItem}
+                          </li>
                         ))}
                       </ul>
                     )}
@@ -114,23 +147,21 @@ const Header = () => {
             )}
           </li>
 
-          <li>
-            <Link to="/about">Մեր մասին</Link>
-          </li>
-          <li>
-            <Link to="/Pay">Վճարել</Link>
-          </li>
-          <li>
-            <Link to="/contact">Օգնություն</Link>
-          </li>
+          <li><Link to="/about" className="hover:text-purple-700">Մեր մասին</Link></li>
+          <li><Link to="/Pay" className="hover:text-purple-700">Վճարել</Link></li>
+          <li><Link to="/contact" className="hover:text-purple-700">Օգնություն</Link></li>
         </ul>
       </nav>
 
-      <div className="right">
-        <span className="user-icon">
-          <FaUser size={20} />Մուտք
+      {/* Right side */}
+      <div className="flex items-center gap-5 border-l border-black pl-4 h-10">
+        <span className="flex items-center gap-2 cursor-pointer text-black">
+          <FaUser size={20} /> Մուտք
         </span>
-        <Link to="/login" className="login-btn">
+        <Link
+          to="/login"
+          className="px-5 py-2 bg-purple-700 text-white rounded-md font-semibold hover:bg-purple-900 transition"
+        >
           Միացի՜ր հիմա
         </Link>
       </div>

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import "./SpecialOffers.css";
 import Img1 from "../assets/OVIO.png";
 import Img2 from "../assets/Special.png";
 import Img3 from "../assets/Game.png";
 import Img4 from "../assets/Happygirl.png";
-import "@fontsource/montserrat/400.css";
-import "@fontsource/montserrat/700.css"; 
 
 const offers = [
   {
@@ -52,22 +49,24 @@ const SpecialOffers = () => {
   };
 
   return (
-    <div className="special-offers-card">
-      <h2>Հատուկ առաջարկներ</h2>
+    <div className="p-10 bg-white rounded-2xl overflow-hidden">
+      <h2 className="text-3xl font-bold mb-6 text-left">Հատուկ առաջարկներ</h2>
 
-      <div className="special-offers-wrapper">
+      <div className="flex items-center relative">
         <button
-          className="scroll-button left"
           onClick={handlePrev}
           disabled={currentIndex === 0}
+          className={`bg-white text-2xl p-3 rounded-full shadow-md mr-2 transition-opacity ${
+            currentIndex === 0 ? "opacity-40 cursor-not-allowed" : ""
+          }`}
           aria-label="Previous"
         >
           ‹
         </button>
 
-        <div className="special-offers-container">
+        <div className="overflow-hidden flex-1">
           <div
-            className="special-offers-inner"
+            className="flex transition-transform duration-500"
             style={{
               transform: `translateX(-${
                 currentIndex * (CARD_WIDTH + CARD_MARGIN_RIGHT)
@@ -77,15 +76,23 @@ const SpecialOffers = () => {
             {offers.map(({ image, title, description, buttons }, index) => (
               <div
                 key={index}
-                className="offer-card"
-                style={{ backgroundImage: `url(${image})` }}
+                className="flex-shrink-0 w-[532px] h-[500px] mr-5 rounded-2xl relative flex items-end text-white shadow-lg"
+                style={{
+                  backgroundImage: `url(${image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div className="offer-content">
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <div className="offer-buttons">
+                <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
+                <div className="relative z-10 p-5 w-full rounded-b-2xl flex flex-col">
+                  <h3 className="text-xl font-bold mb-2 drop-shadow-lg">{title}</h3>
+                  <p className="text-sm mb-5 drop-shadow-lg">{description}</p>
+                  <div className="mt-auto">
                     {buttons.map((btn, i) => (
-                      <button key={i} className="offer-btn">
+                      <button
+                        key={i}
+                        className="bg-purple-700 hover:bg-purple-900 text-white px-6 py-3 rounded-lg font-semibold text-sm transition-colors"
+                      >
                         {btn}
                       </button>
                     ))}
@@ -97,9 +104,11 @@ const SpecialOffers = () => {
         </div>
 
         <button
-          className="scroll-button right"
           onClick={handleNext}
           disabled={currentIndex === maxIndex}
+          className={`bg-white text-2xl p-3 rounded-full shadow-md ml-2 transition-opacity ${
+            currentIndex === maxIndex ? "opacity-40 cursor-not-allowed" : ""
+          }`}
           aria-label="Next"
         >
           ›
