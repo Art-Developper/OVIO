@@ -95,7 +95,7 @@ const slides = [
 
 const MyCarousel = () => {
   const settings = {
-    dots: true, // Dots-ը ակտիվացրել ենք
+    dots: true,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
@@ -107,12 +107,12 @@ const MyCarousel = () => {
     autoplaySpeed: 5000,
     adaptiveHeight: false,
     lazyLoad: true,
-    // Customizing the dots
+
     appendDots: (dots) => (
       <div
         style={{
           position: "absolute",
-          bottom: "30px", // Դիրքը ներքևից
+          bottom: "30px", 
           width: "100%",
           display: "flex",
           justifyContent: "center",
@@ -128,7 +128,7 @@ const MyCarousel = () => {
           width: "10px",
           height: "10px",
           borderRadius: "50%",
-          backgroundColor: "#fff", // Սպիտակ կետեր
+          backgroundColor: "#fff", 
           opacity: "0.5",
           transition: "opacity 0.3s ease",
         }}
@@ -142,11 +142,10 @@ const MyCarousel = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            // `!important` Tailwind-ում չենք օգտագործում, բայց `min-h` ապահովում է նվազագույն բարձրություն
-            className="flex flex-col md:flex-row items-center justify-center min-h-[500px] md:min-h-[774px] relative" // Changed justify-between to justify-center, added relative for children positioning if needed
+
+            className="flex flex-col md:flex-row items-center justify-center min-h-[500px] md:min-h-[774px] relative" 
           >
-            {/* Background elements (like the robot) that are part of the image can be handled here if needed */}
-            {/* Text Content */}
+
             <div className="w-full md:w-[45%] z-10 text-center md:text-left p-6 md:p-12 md:pl-24 order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
               <h1 className="text-3xl md:text-[3.5rem] font-light text-cyan-400 mb-4 md:mb-[15px] leading-tight md:text-left">
                 {slide.title}
@@ -178,19 +177,14 @@ const MyCarousel = () => {
               </div>
             </div>
 
-            {/* Image Content - adjusted for the new layout */}
+            
             <div className="w-full md:w-[55%] flex justify-center md:justify-end items-center md:items-end overflow-hidden order-1 md:order-2 md:absolute md:right-0 md:top-0 md:h-full">
               <img
                 src={slide.image}
                 alt={`Slide ${index + 1}`}
-                // object-cover: ապահովում է, որ նկարը ծածկի իր տարածքը, հնարավոր է կտրվելով
-                // rounded-l-[50%]: Ձախ կլորավուն եզր
+
                 className="w-full h-auto md:h-full object-cover rounded-none md:rounded-l-[50%]"
-                style={{ /* For images that include text, you might need object-contain */
-                         // For image 12 specifically, if it has text, you might want object-contain and wider container
-                         objectFit: slide.image === Img12 ? 'contain' : 'cover',
-                         width: slide.image === Img12 ? '90%' : '100%' // Allow Img12 to be wider if needed
-                }}
+                style={{objectFit: slide.image === Img12 ? 'contain' : 'cover',width: slide.image === Img12 ? '90%' : '100%' }}
               />
             </div>
           </div>
