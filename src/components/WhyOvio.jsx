@@ -34,17 +34,13 @@ const steps = [
   },
 ];
 
-const CARD_WIDTH = 380; // Ձեր CSS-ում step-ի width-ը 380px էր
-const CARD_MARGIN_RIGHT = 20; // Ձեր CSS-ում steps-inner-ի gap-ը 20px էր
-// VISIBLE_CARDS - սա կարող է լինել responsive, բայց այս պահին թողնում ենք 2՝ հաշվարկների համար։
-// Իրականում, քանի որ .step-container-ը ունի overflow: hidden, իսկ .steps-wrapper-ը լայնություն,
-// visible cards-ը կախված է լինելու .steps-container-ի տեսանելի լայնությունից։
-// Այս հաստատունը օգտագործվում է maxIndex-ը հաշվելու համար, որպեսզի սլայդը չգնա դատարկ տեղ։
-const VISIBLE_CARDS_CALC = 1; // Օրինակ, եթե միայն մեկ քարտ է ամբողջությամբ երևում միաժամանակ փոքր էկրաններին
+const CARD_WIDTH = 380;
+const CARD_MARGIN_RIGHT = 20;
+const VISIBLE_CARDS_CALC = 1; 
 
 const WhyOvio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const maxIndex = steps.length - VISIBLE_CARDS_CALC; // Փոփոխված հաշվարկ
+  const maxIndex = steps.length - VISIBLE_CARDS_CALC; 
 
   const handlePrev = () => {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
