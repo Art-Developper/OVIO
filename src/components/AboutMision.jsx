@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const menuItems = [
-    { path: '/about/services-accessibility', label: 'Ծառայությունների հասանելիություն' },
+    { path: '/about/services_accessibility', label: 'Ծառայությունների հասանելիություն' },
     { path: '/about/reports', label: 'Հաշվետվություններ' },
     { path: '/about/regulatory-framework', label: 'Իրավակարգավորման թերթիկ' },
     { path: '/about/purchases', label: 'Գնումներ' },
