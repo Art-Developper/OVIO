@@ -19,10 +19,6 @@ const AboutHeroSection = () => {
           alt="OVIO - Բացահայտի՛ր"
           className="w-full h-full object-cover rounded-none md:rounded-l-[50%]"
         />
-        {/* Եթե ցանկանում եք նկարի վրա ունենալ "բացահայտի՛ր" տեքստը, կարող եք այն ավելացնել այստեղ։ */}
-        {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-4xl md:text-6xl font-bold">
-          Բացահայտի՛ր
-        </div> */}
       </div>
     </div>
   );

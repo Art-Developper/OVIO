@@ -1,5 +1,8 @@
 import React, { useState } from 'react'; 
 import { Link, useLocation } from 'react-router-dom';
+import HeadBar from "../components/headBar";
+import Header from './Header';
+import Footer from "./footer";
 
 const menuItems = [
     { path: '/about/services_accessibility', label: 'Ծառայությունների հասանելիություն' },
@@ -63,8 +66,11 @@ const accordionData = [
         id: 'gegharkunik',
         title: '5. Գեղարքունիքի մարզ',
         regions: [
-            { name: 'Գավառ', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Գավառ', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Ճամբարակ', voip: 'VOIP', gpon: 'MPLS' },
             { name: 'Սևան', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Վարդենիս', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Մարտունի', voip: 'VOIP', gpon: 'GPON/MPLS' }
         ],
     },
     {
@@ -72,31 +78,42 @@ const accordionData = [
         title: '6. Լոռու մարզ',
         regions: [
             { name: 'Վանաձոր', voip: 'VOIP', gpon: 'GPON/MPLS' },
-            { name: 'Սպիտակ', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Սպիտակ', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Ստեփանավան', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Ալավերդի', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Տաշիր', voip: 'VOIP', gpon: 'MPLS' }
         ],
     },
     {
         id: 'shirak',
-        title: '7. Շիրակի մարզ',
+        title: '7. Տավուշի մարզ',
         regions: [
-            { name: 'Գյումրի', voip: 'VOIP', gpon: 'GPON/MPLS' },
-            { name: 'Արթիկ', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Բերդ', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Դիլիջան', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Իջևան', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Նոյեմբերյան', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Բագրատաշեն', voip: 'VOIP', gpon: 'MPLS' },
         ],
     },
     {
         id: 'vayots_dzor',
         title: '8. Վայոց Ձորի մարզ',
         regions: [
-            { name: 'Եղեգնաձոր', voip: 'VOIP', gpon: 'GPON/MPLS' },
-            { name: 'Ջերմուկ', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Եղեգնաձոր', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Ջերմուկ', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Վայք', voip: 'VOIP', gpon: 'MPLS' },
         ],
     },
     {
         id: 'syunik',
-        title: '9. Սյունիքի մարզ',
+        title: '9. Շիրակի մարզ',
         regions: [
-            { name: 'Կապան', voip: 'VOIP', gpon: 'GPON/MPLS' },
-            { name: 'Գորիս', voip: 'VOIP', gpon: 'GPON/MPLS' },
+            { name: 'Ախուրյան', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Ամասիա', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Աշոցք', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Մարալիկ', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Արթիկ', voip: 'VOIP', gpon: 'MPLS' },
+            { name: 'Գյումրի', voip: 'VOIP', gpon: 'GPON/MPLS' },
         ],
     },
 ];
@@ -112,10 +129,14 @@ const ServicesTable = () => {
     };
 
     return (
-        <>
+       
+        <> 
+        <HeadBar />
+        <Header />
+
             <div className="flex">
 
-                <div className="w-1/3 bg-white rounded-2xl shadow-lg p-0 mr-4">
+                <div className="w-2/3 bg-white rounded-2xl shadow-lg p-0 mr-4">
                     <ul className="list-none p-0 m-0">
                         {menuItems.map((item, index) => (
                             <li
@@ -228,6 +249,7 @@ const ServicesTable = () => {
 
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
