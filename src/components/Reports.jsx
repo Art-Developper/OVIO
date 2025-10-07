@@ -4,7 +4,33 @@ import HeadBar from "../components/headBar";
 import Header from "./Header";
 import Footer from "./footer";
 import pdf2025 from "../../public/pdfFiles/ՕվիօԱռաջինԵռամսյակ2025.pdf";
-import pdf20252 from "../../public/pdfFiles/ՕվիօԵրկրորդԵռամսյակ2025.pdf";
+import pdf2025_2 from "../../public/pdfFiles/ՕվիօԵրկրորդԵռամսյակ2025.pdf";
+import pdf2024 from "../../public/pdfFiles/ՕվիօԱռաջինԵռ2024.pdf";
+import pdf2024_2 from "../../public/pdfFiles/ՕվիօԵրկԵռ2024.pdf";
+import pdf2024_3 from "../../public/pdfFiles/ՕվիօԵրրԵռ2024.pdf";
+import pdf2024_4 from "../../public/pdfFiles/ՕվիօՉորԵռ2024.pdf";
+import pdf2024Fin from "../../public/pdfFiles/ՕվիօՖինՀաշ2024.pdf";
+import pdf2023 from "../../public/pdfFiles/ՕվիօԱռԵռ2023.pdf";
+import pdf2023_2 from "../../public/pdfFiles/ՕվիօԵրկԵռ2023.pdf";
+import pdf2023_3 from "../../public/pdfFiles/ՕվիօԵրրԵռ2023.pdf";
+import pdf2023_4 from "../../public/pdfFiles/ՕվիօՉորԵռ2023.pdf";
+import pdf2023Fin from "../../public/pdfFiles/ՕվիօՖինՀաշ2023.pdf";
+import pdf2022 from "../../public/pdfFiles/ՕվիօԱռԵռ2022.pdf";
+import pdf2022_2 from "../../public/pdfFiles/ՕվիօԵրկԵռ2022.pdf";
+import pdf2022_3 from "../../public/pdfFiles/ՕվիօԵրրԵռ2022.pdf";
+import pdf2022_4 from "../../public/pdfFiles/ՕվիօՉորԵռ2022.pdf";
+import pdf2022Fin from "../../public/pdfFiles/ՕվիօՖինՀաշ2022.pdf";
+import pdf2021 from "../../public/pdfFiles/JINSI-ALFA-Report-2021-Q1.pdf";
+import pdf2021_2 from "../../public/pdfFiles/ՕվիօԵրկԵռ2021.pdf";
+import pdf2021_3 from "../../public/pdfFiles/ՕվիօԵրրԵռ2021.pdf";
+import pdf2021_4 from "../../public/pdfFiles/ՕվիօՉորԵռ2021.pdf";
+import pdf2021Fin from "../../public/pdfFiles/ՕվիօՖինՀաշ2021.pdf";
+import pdf2020 from "../../public/pdfFiles/JINSI-ALFA-Report-2020-Q1.pdf";
+import pdf2020_2 from "../../public/pdfFiles/JINSI-ALFA-Report-2020-Q2.pdf";
+import pdf2020_3 from "../../public/pdfFiles/JINSI-ALFA-Report-2020-Q3.pdf";
+import pdf2020_4 from "../../public/pdfFiles/JINSI-ALFA-Report-2020-Q4.pdf";
+import pdf2020Fin from "../../public/pdfFiles/JINSI-ALFA-Report-2020-Fin.pdf";
+
 
 const menuItems = [
   {
@@ -12,7 +38,7 @@ const menuItems = [
     label: "Ծառայությունների հասանելիություն",
   },
   { path: "/about/reports", label: "Հաշվետվություններ" },
-  { path: "/about/regulatory-framework", label: "Իրավակարգավորման թերթիկ" },
+  { path: "/about/regulatory-framework", label: "Իրազերկման թերթիկ" },
   { path: "/about/purchases", label: "Գնումներ" },
   { path: "/about/required-documents", label: "Անհրաժեշտ փաստաթղթեր" },
 ];
@@ -28,7 +54,137 @@ const reports = [
       },
       {
         name: "Երկրորդ եռամսյակ",
-        file: pdf20252,
+        file: pdf2025_2,
+      },
+    ],
+  },
+  {
+    id: 2024,
+    title: "2024",
+    files: [
+      {
+        name: "Առաջին եռամսյակ",
+        file: pdf2024,
+      },
+      {
+        name: "Երկրորդ եռամսյակ",
+        file: pdf2024_2,
+      },
+      {
+        name: "Երրորդ եռամսյակ",
+        file: pdf2024_3,
+      },
+      {
+        name: "Չորորդ եռամսյակ",
+        file: pdf2024_4,
+      },
+      {
+        name: "Ֆինասական հաշվետտվություն",
+        file: pdf2024Fin,
+      },
+    ],
+  },
+  {
+    id: 2023,
+    title: "2023",
+    files: [
+      {
+        name: "Առաջին եռամսյակ",
+        file: pdf2023,
+      },
+      {
+        name: "Երկրորդ եռամսյակ",
+        file: pdf2023_2,
+      },
+      {
+        name: "Երրորդ եռամսյակ",
+        file: pdf2023_3,
+      },
+      {
+        name: "Չորորդ եռամսյակ",
+        file: pdf2023_4,
+      },
+      {
+        name: "Ֆինասական հաշվետտվություն",
+        file: pdf2023Fin,
+      },
+    ],
+  }, 
+  {
+    id: 2022,
+    title: "2022",
+    files: [
+      {
+        name: "Առաջին եռամսյակ",
+        file: pdf2022,
+      },
+      {
+        name: "Երկրորդ եռամսյակ",
+        file: pdf2022_2,
+      },
+      {
+        name: "Երրորդ եռամսյակ",
+        file: pdf2022_3,
+      },
+      {
+        name: "Չորորդ եռամսյակ",
+        file: pdf2022_4,
+      },
+      {
+        name: "Ֆինասական հաշվետտվություն",
+        file: pdf2022Fin,
+      },
+    ],
+  },
+  {
+    id: 2021,
+    title: "2021",
+    files: [
+      {
+        name: "Առաջին եռամսյակ",
+        file: pdf2021,
+      },
+      {
+        name: "Երկրորդ եռամսյակ",
+        file: pdf2021_2,
+      },
+      {
+        name: "Երրորդ եռամսյակ",
+        file: pdf2021_3,
+      },
+      {
+        name: "Չորորդ եռամսյակ",
+        file: pdf2021_4,
+      },
+      {
+        name: "Ֆինասական հաշվետտվություն",
+        file: pdf2021Fin,
+      },
+    ],
+  },
+  {
+    id: 2020,
+    title: "2020",
+    files: [
+      {
+        name: "Առաջին եռամսյակ",
+        file: pdf2020,
+      },
+      {
+        name: "Երկրորդ եռամսյակ",
+        file: pdf2020_2,
+      },
+      {
+        name: "Երրորդ եռամսյակ",
+        file: pdf2020_3,
+      },
+      {
+        name: "Չորորդ եռամսյակ",
+        file: pdf2020_4,
+      },
+      {
+        name: "Ֆինասական հաշվետտվություն",
+        file: pdf2020Fin,
       },
     ],
   },

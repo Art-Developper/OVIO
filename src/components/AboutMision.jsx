@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 const menuItems = [
     { path: '/about/services_accessibility', label: 'Ծառայությունների հասանելիություն' },
     { path: '/about/reports', label: 'Հաշվետվություններ' },
-    { path: '/about/regulatory-framework', label: 'Իրավակարգավորման թերթիկ' },
+    { path: '/about/regulatory-framework', label: 'Իրավազերկման թերթիկ' },
     { path: '/about/purchases', label: 'Գնումներ' },
     { path: '/about/required-documents', label: 'Անհրաժեշտ փաստաթղթեր' },
 ];
