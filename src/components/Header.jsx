@@ -54,7 +54,7 @@ const Header = () => {
     <header className="flex items-center justify-between px-10 py-3 bg-white border-b border-gray-300 font-sans relative z-50">
       {/* Logo */}
       <div className="logo">
-        <Link to="/">
+        <Link to="/home">
           <img src={OVIOLogo} alt="Ovio Logo" className="h-24" />
         </Link>
       </div>
@@ -155,9 +155,12 @@ const Header = () => {
 
       {/* Right side */}
       <div className="flex items-center gap-5 border-l border-black pl-4 h-10">
+        <Link to="/login">
         <span className="flex items-center gap-2 cursor-pointer text-black">
-          <FaUser size={20} /> Մուտք
+        <FaUser  size={20} /> Մուտք
         </span>
+        </Link>
+        
         <Link
           to="/login"
           className="px-5 py-2 bg-purple-700 text-white rounded-md font-semibold hover:bg-purple-900 transition"
