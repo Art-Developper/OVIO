@@ -25,51 +25,68 @@ const ChatWidget = () => {
         e.preventDefault();
         console.log('Form Submitted:', formData);
         alert('Ձեր հարցն ուղարկվել է:');
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            message: '',
+            countryCode: '+374'
+        });
     };
 
     return (
-        <div className="bg-white rounded-2xl shadow-xl w-full max-w-sm overflow-hidden flex flex-col min-h-[500px] font-sans">
-            <ChatHeader />
-            <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
-                <div className="p-5 flex-grow overflow-y-auto">
-                    <InputGroup
-                        label="Անուն"
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                    <InputGroup
-                        label="Էլ. հասցե"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                    <PhoneInput
-                        label="Հեռախոսահամար"
-                        name="phone"
-                        phoneNumber={formData.phone}
-                        countryCode={formData.countryCode}
-                        onPhoneNumberChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
-                        onCountryCodeChange={(value) => setFormData(prev => ({ ...prev, countryCode: value }))}
-                        required
-                    />
-                    <InputGroup
-                        label="Նամակ"
-                        name="message"
-                        type="textarea"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                    />
-                   
-                    <button type="submit" className="bg-primary-purple text-white py-3 rounded-lg mt-4 w-full">Ուղարկել</button>
-                </div>
-            </form>
-            <FooterNav />
+
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-700 to-fuchsia-500 p-4 sm:p-6">
+            <div className="bg-white rounded-3xl shadow-2xl w-full max-w-sm overflow-hidden flex flex-col min-h-[600px] font-sans">
+                <ChatHeader />
+                <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
+
+                    <div className="p-6 flex-grow overflow-y-auto space-y-5">
+                        <InputGroup
+                            label="Անուն"
+                            name="name"
+                            type="text"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                        <InputGroup
+                            label="Էլ. հասցե"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                        <PhoneInput
+                            label="Հեռախոսահամար"
+                            name="phone"
+                            phoneNumber={formData.phone}
+                            countryCode={formData.countryCode}
+                            onPhoneNumberChange={(value) => setFormData(prev => ({ ...prev, phone: value }))}
+                            onCountryCodeChange={(value) => setFormData(prev => ({ ...prev, countryCode: value }))}
+                            required
+                        />
+                        <InputGroup
+                            label="Նամակ"
+                            name="message"
+                            type="textarea"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        <button
+                            type="submit"
+                            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold py-3 px-4 rounded-xl text-lg transition duration-300 ease-in-out shadow-lg
+                                       hover:from-indigo-600 hover:to-purple-600 hover:shadow-xl hover:scale-105"
+                        >
+                            Ուղարկել
+                        </button>
+                    </div>
+                </form>
+                <FooterNav />
+            </div>
         </div>
     );
 };

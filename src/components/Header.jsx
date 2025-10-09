@@ -150,6 +150,7 @@ const Header = () => {
           <li><Link to="/about" className="hover:text-purple-700">Մեր մասին</Link></li>
           <li><Link to="/Pay" className="hover:text-purple-700">Վճարել</Link></li>
           <li><Link to="/contact" className="hover:text-purple-700">Օգնություն</Link></li>
+          <li><Link to="/chatbot" className="text-black-100 hover:text-purple-700">Հարցեր</Link></li>
         </ul>
       </nav>
 

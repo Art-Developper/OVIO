@@ -7,6 +7,7 @@ import RegFrame from "./components/RegulatoryFramework";
 import RequiredDocuments from "./components/RequiredDocuments";
 import Purchases from "./components/Purchase";
 import Login from "./components/Login";
+import ChatBot from "./pages/ChatBotPage";
 import './App.css';
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />}/>
+        <Route path="/chatbot" element={<ChatBot />} />
         <Route path="/about/services_accessibility" element={<ServicesAccessibility />} />
         <Route path="/about/reports" element={<Reports />} />
         <Route path="/about/regulatory-framework" element={<RegFrame />}/>

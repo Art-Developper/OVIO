@@ -8,7 +8,6 @@ import TabsWithSlide from "../components/tabexample";
 import OvioViedo from "../components/OvioViedo";
 import Footer from "../components/footer";
 import TheBest from "../components/TheBEst";
-// import ChatWidget from "../components/ChatWidget";
 
 const HomePage = () => {
   return (
@@ -22,7 +21,6 @@ const HomePage = () => {
     <OvioViedo></OvioViedo>
     <ItsConvenientWithUs></ItsConvenientWithUs>
     <TheBest></TheBest>
-    {/* <ChatWidget></ChatWidget> */}
     <Footer></Footer>
     </>
   );
