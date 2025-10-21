@@ -5,6 +5,7 @@ import {
     onAuthStateChanged
 } from "firebase/auth";
 import { auth } from '../fireBaseConfig';
+import Header from "./Header2"
 
 const Login = () => {
     const navigate = useNavigate();
@@ -44,7 +45,7 @@ const Login = () => {
             localStorage.setItem("userEmail", user.email);
             localStorage.setItem("userId", user.uid);
             setMessage("Բարի գալուստ!");
-            navigate("/"); 
+            navigate("/");
         } catch (error) {
             console.error("Մուտքի սխալ:", error.message);
             switch (error.code) {
@@ -68,7 +69,8 @@ const Login = () => {
         return <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">Բեռնում...</div>;
     }
 
-    return (
+    return (<>
+        <Header/>
         <div className="flex items-center justify-center min-h-screen bg-gray-100 p-4">
             <div className="w-full max-w-sm bg-white p-8 rounded-lg shadow-md">
                 <h2 className="text-center text-2xl font-bold text-gray-800 mb-6">Մուտք</h2>
@@ -103,6 +105,7 @@ const Login = () => {
                 )}
             </div>
         </div>
+    </>
     );
 };
 
