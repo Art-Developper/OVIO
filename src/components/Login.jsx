@@ -4,7 +4,7 @@ import {
     signInWithEmailAndPassword,
     onAuthStateChanged
 } from "firebase/auth";
-import { auth } from './firebaseConfig';
+import { auth } from '../fireBaseConfig';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -19,7 +19,7 @@ const Login = () => {
                 localStorage.setItem("loggedIn", "true");
                 localStorage.setItem("userEmail", user.email); // Պահպանում ենք էլ. փոստը
                 localStorage.setItem("userId", user.uid); // Պահպանում ենք օգտատիրոջ ID-ն
-                navigate("/chat"); // Մուտքից հետո ուղղել դեպի չաթի էջ
+                navigate("/"); // Մուտքից հետո ուղղել դեպի չաթի էջ
             } else {
                 localStorage.removeItem("loggedIn");
                 localStorage.removeItem("userEmail");
@@ -44,7 +44,7 @@ const Login = () => {
             localStorage.setItem("userEmail", user.email);
             localStorage.setItem("userId", user.uid);
             setMessage("Բարի գալուստ!");
-            navigate("/chatbot"); 
+            navigate("/"); 
         } catch (error) {
             console.error("Մուտքի սխալ:", error.message);
             switch (error.code) {

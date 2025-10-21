@@ -3,7 +3,7 @@ import ChatHeader from './ChatHeader';
 import InputGroup from './InputGroup';
 import PhoneInput from './PhoneInput';
 import FooterNav from './FooterNav';
-import { db } fr './firebaseConfig'; 
+import { db } from '../fireBaseConfig'; 
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'; 
 
 const ChatWidget = () => {
