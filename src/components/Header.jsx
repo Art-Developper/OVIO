@@ -199,9 +199,6 @@ const Header = () => {
             <span className="flex items-center gap-2 text-black font-semibold">
               <FaUser size={20} /> Բարև, {user.email}! {/* Display user's email directly */}
             </span>
-            <Link to="/messages" className="flex items-center gap-2 cursor-pointer text-black hover:text-purple-700">
-              <FaEnvelope size={20} /> Նամակներ
-            </Link>
             <button
               onClick={handleLogout}
               className="flex items-center gap-2 cursor-pointer text-black hover:text-purple-700"

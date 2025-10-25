@@ -2,9 +2,40 @@
   "emulators": {
     "dataconnect": {
       "dataDir": "dataconnect/.dataconnect/pgliteData"
+    },
+    "firestore": {
+      "port": 8080 
+    },
+    "functions": {
+      "port": 5001 
+    },
+    "hosting": {
+      "port": 5000 
     }
   },
   "dataconnect": {
     "source": "dataconnect"
+  },
+  "hosting": {
+    "public": "build", 
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs18" 
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }
