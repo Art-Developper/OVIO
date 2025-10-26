@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore } from 'firebase/firestore';
 import { getFunctions, httpsCallable } from 'firebase/functions';
-import { app } from '../fireBaseConfig'; 
+import { app } from '../fireBaseConfig';
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
@@ -15,7 +15,8 @@ const Messages = () => {
   const db = getFirestore(app);
   const functions = getFunctions(app);
 
-  const sendInquiryReplyEmail = httpsCallable(functions, 'sendInquiryReplyEmail');
+  // Փոխված ֆունկցիայի անունը՝ saveInquiryReplyToFirestore
+  const saveInquiryReplyToFirestore = httpsCallable(functions, 'saveInquiryReplyToFirestore');
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -25,10 +26,13 @@ const Messages = () => {
           id: doc.id,
           ...doc.data()
         }));
-        
+
         fetchedMessages.sort((a, b) => {
-          if (!a.timestamp || !b.timestamp) return 0; 
-          return b.timestamp.seconds - a.timestamp.seconds;
+          if (!a.timestamp || !b.timestamp) return 0;
+          // Ունենալու համար, որ ավելի նոր հարցումները վերևում լինեն
+          const timeA = a.timestamp ? a.timestamp.seconds : 0;
+          const timeB = b.timestamp ? b.timestamp.seconds : 0;
+          return timeB - timeA;
         });
         setMessages(fetchedMessages);
       } catch (err) {
@@ -53,16 +57,19 @@ const Messages = () => {
       alert("Խնդրում ենք մուտքագրել պատասխան։");
       return;
     }
-    if (!currentMessageToReply.email) {
-      alert("Հարցումը չունի էլ. հասցե, հնարավոր չէ պատասխան ուղարկել։");
-      return;
-    }
+    // Էլ. հասցեի ստուգումն այլևս խիստ անհրաժեշտ չէ, եթե էլ. փոստ չենք ուղարկում,
+    // բայց կարող է օգտակար լինել Firestore-ում պահելու համար:
+    // if (!currentMessageToReply.email) {
+    //   alert("Հարցումը չունի էլ. հասցե, հնարավոր չէ պատասխան ուղարկել։");
+    //   return;
+    // }
 
     setSendingReply(true);
 
     try {
-      const result = await sendInquiryReplyEmail({
-        recipientEmail: currentMessageToReply.email,
+      // Կանչում ենք նոր անունով ֆունկցիան
+      const result = await saveInquiryReplyToFirestore({
+        recipientEmail: currentMessageToReply.email || null, // Անցկացնում ենք էլ. հասցեն (կարող է լինել null)
         recipientName: currentMessageToReply.name || 'Հաճախորդ',
         originalMessage: currentMessageToReply.message,
         replyContent: replyContent,
@@ -70,13 +77,13 @@ const Messages = () => {
       });
 
       if (result.data && result.data.success) {
-        alert("Պատասխան նամակն հաջողությամբ ուղարկվեց։");
+        alert("Պատասխանն հաջողությամբ պահպանվեց տվյալների բազայում։"); // Փոփոխված հաղորդագրություն
       } else {
-        alert("Սխալ առաջացավ նամակն ուղարկելիս։ " + (result.data && result.data.message ? result.data.message : "Անհայտ սխալ։"));
+        alert("Սխալ առաջացավ պատասխանը պահպանելիս։ " + (result.data && result.data.message ? result.data.message : "Անհայտ սխալ։"));
       }
     } catch (err) {
       console.error("Սխալ Cloud Function-ը կանչելիս։", err);
-      alert("Սխալ առաջացավ նամակն ուղարկելիս։ " + (err.message || "Խնդրում ենք փորձել կրկին։"));
+      alert("Սխալ առաջացավ պատասխանը պահպանելիս։ " + (err.message || "Խնդրում ենք փորձել կրկին։"));
     } finally {
       setSendingReply(false);
       setReplyModalOpen(false);
@@ -138,7 +145,9 @@ const Messages = () => {
             <button
               className="mt-auto bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-300 self-start focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
               onClick={() => handleReplyClick(message)}
-              disabled={!message.email} // Անջատել, եթե էլ. հասցե չկա
+            // Անջատում ենք նույնիսկ եթե էլ հասցե չկա, քանի որ էլ հասցեն պարտադիր չէ Firestore-ում պատասխան պահելու համար
+            // բայց եթե ցանկանում եք, որ հարցումներին պատասխանելու հնարավորություն լինի միայն էլ. հասցե ունեցողների համար, կարող եք թողնել disabled={!message.email}
+            // Այս դեպքում, ես այն բաց եմ թողնում, որպեսզի միշտ հնարավոր լինի պահպանել պատասխանը Firestore-ում:
             >
               Պատասխանել
             </button>
@@ -174,7 +183,7 @@ const Messages = () => {
               <button
                 className="bg-green-500 text-white py-2 px-5 rounded-lg hover:bg-green-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 onClick={handleSendReply}
-                disabled={sendingReply || !replyContent.trim()} // Անջատել, եթե պատասխան չկա կամ ուղարկվում է
+                disabled={sendingReply || !replyContent.trim()}
               >
                 {sendingReply ? (
                   <svg className="animate-spin h-5 w-5 text-white inline-block mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
